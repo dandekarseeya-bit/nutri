@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F8FA">
+
+    ```
+    <!-- TOP BAR -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="←"
+            android:textSize="22sp"
+            android:textColor="#202124"
+            android:backgroundTint="#FFFFFF"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="AI Food Detection"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#202124"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <!-- MAIN CONTENT -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- INTRODUCTION -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analyze your food"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#202124"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take a photo or choose an image to identify the food and estimate its nutrition."
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginTop="6dp"/>
+
+
+            <!-- FOOD IMAGE AREA -->
+
+            <ImageView
+                android:id="@+id/ivFoodImage"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="20dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:scaleType="centerInside"
+                android:background="#EDEFF2"
+                android:contentDescription="Food image"/>
+
+
+            <!-- IMAGE BUTTONS -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnCamera"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="📷  CAMERA"/>
+
+                <Button
+                    android:id="@+id/btnGallery"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="🖼  GALLERY"/>
+
+            </LinearLayout>
+
+
+            <!-- DETECTION RESULT -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DETECTED FOOD"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginTop="25dp"/>
+
+            <EditText
+                android:id="@+id/tvDetectedFood"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="AI detected food"
+                android:text="No food detected yet"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="#202124"
+                android:padding="12dp"
+                android:background="#FFFFFF"
+                android:inputType="textCapWords"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can correct the food name if the AI detection is incorrect."
+                android:textSize="12sp"
+                android:textColor="#777777"
+                android:layout_marginTop="5dp"/>
+
+
+            <!-- WEIGHT -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEIGHT (GRAMS)"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/etFoodWeight"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Enter weight"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="#FFFFFF"/>
+
+
+            <!-- NUTRITION -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NUTRITION ESTIMATE"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginTop="20dp"/>
+
+
+            <!-- ROW 1 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvDetectionCalories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0 kcal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:background="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvDetectionProtein"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="0 g\nProtein"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:background="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvDetectionCarbs"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="0 g\nCarbs"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:background="#FFFFFF"/>
+
+            </LinearLayout>
+
+
+            <!-- ROW 2 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvDetectionFat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0 g\nFat"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:background="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvDetectionFiber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0 g\nFiber"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:background="#FFFFFF"/>
+
+            </LinearLayout>
+
+
+            <!-- MEAL TYPE -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEAL TYPE"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#777777"
+                android:layout_marginTop="20dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerDetectionMealType"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"/>
+
+
+            <!-- SAVE -->
+
+            <Button
+                android:id="@+id/btnSaveDetectedFood"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SAVE MEAL"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+    ```
+
+</LinearLayout>

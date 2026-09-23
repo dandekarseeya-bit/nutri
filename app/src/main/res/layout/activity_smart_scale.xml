@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F9FC">
+
+    <!-- Top Bar -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/btnScaleBack"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Smart Scale"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Scale Icon -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚖️"
+                android:textSize="55sp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"/>
+
+
+            <!-- Connection Status -->
+
+            <TextView
+                android:id="@+id/tvScaleStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scale not connected"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+
+            <!-- Connect Button -->
+
+            <Button
+                android:id="@+id/btnConnectScale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONNECT SCALE"
+                android:layout_marginTop="15dp"/>
+
+
+            <!-- Weight Card -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="25dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Weight"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tvScaleWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 g"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+
+            <!-- Manual Weight -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food Weight (grams)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"/>
+
+            <EditText
+                android:id="@+id/etScaleWeight"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Example: 200"
+                android:inputType="numberDecimal"
+                android:padding="12dp"/>
+
+
+            <!-- Food Name -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/etScaleFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Example: Apple"
+                android:inputType="text"/>
+
+
+            <!-- Meal Type -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Type"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerScaleMealType"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"/>
+
+
+            <!-- Calculate -->
+
+            <Button
+                android:id="@+id/btnCalculateScale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CALCULATE NUTRITION"
+                android:layout_marginTop="25dp"/>
+
+
+            <!-- Nutrition -->
+
+            <TextView
+                android:id="@+id/tvScaleNutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nutrition will appear here"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="15dp"
+                android:background="#FFFFFF"/>
+
+
+            <!-- Save -->
+
+            <Button
+                android:id="@+id/btnSaveScaleMeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE MEAL"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

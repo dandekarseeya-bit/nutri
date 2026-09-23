@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FC"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp">
+
+        <!-- Back Button -->
+
+        <Button
+            android:id="@+id/btnAnalyticsBack"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:text="←"
+            android:textSize="22sp"
+            android:textColor="#222222"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Page Title -->
+
+        <TextView
+            android:id="@+id/tvAnalyticsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nutrition Analytics"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnAnalyticsBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnAnalyticsBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnAnalyticsBack"
+            android:layout_marginEnd="65dp" />
+
+        <!-- Weekly Heading -->
+
+        <TextView
+            android:id="@+id/tvWeeklyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Your Weekly Nutrition"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAnalyticsBack"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="22dp" />
+
+        <!-- Subtitle -->
+
+        <TextView
+            android:id="@+id/tvWeeklySubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Track your nutrition over the last 7 days."
+            android:textSize="15sp"
+            android:textColor="#666666"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvWeeklyTitle"
+            android:layout_marginTop="5dp" />
+
+        <!-- Weekly Summary -->
+
+        <TextView
+            android:id="@+id/tvWeeklySummaryTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="WEEKLY SUMMARY"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#777777"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvWeeklySubtitle"
+            android:layout_marginTop="25dp" />
+
+        <!-- Total Calories -->
+
+        <TextView
+            android:id="@+id/tvWeeklyCalories"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:text="0 kcal\nTotal Calories"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toStartOf="@id/tvAverageCalories"
+            app:layout_constraintTop_toBottomOf="@id/tvWeeklySummaryTitle"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Average Calories -->
+
+        <TextView
+            android:id="@+id/tvAverageCalories"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:text="0 kcal\nDaily Average"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/tvWeeklyCalories"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toTopOf="@id/tvWeeklyCalories"
+            android:layout_marginStart="6dp" />
+
+        <!-- Weekly Goal Status -->
+
+        <TextView
+            android:id="@+id/tvWeeklyGoalStatus"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Daily goal: 2000 kcal"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvWeeklyCalories"
+            android:layout_marginTop="10dp" />
+
+        <!-- Weekly Macronutrients -->
+
+        <LinearLayout
+            android:id="@+id/layoutWeeklyMacros"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvWeeklyGoalStatus"
+            android:layout_marginTop="10dp">
+
+            <!-- Protein -->
+
+            <TextView
+                android:id="@+id/tvWeeklyProtein"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0 g\nProtein"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:gravity="center"
+                android:background="#FFFFFF" />
+
+            <!-- Carbs -->
+
+            <TextView
+                android:id="@+id/tvWeeklyCarbs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="0 g\nCarbs"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:gravity="center"
+                android:background="#FFFFFF" />
+
+            <!-- Fat -->
+
+            <TextView
+                android:id="@+id/tvWeeklyFat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="0 g\nFat"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:gravity="center"
+                android:background="#FFFFFF" />
+
+        </LinearLayout>
+
+        <!-- Last 7 Days -->
+
+        <TextView
+            android:id="@+id/tvLastSevenDaysTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="LAST 7 DAYS"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#777777"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/layoutWeeklyMacros"
+            android:layout_marginTop="20dp" />
+
+        <!-- Day 1 -->
+
+        <TextView
+            android:id="@+id/tvDay1"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 1    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvLastSevenDaysTitle"
+            android:layout_marginTop="10dp" />
+
+        <!-- Day 2 -->
+
+        <TextView
+            android:id="@+id/tvDay2"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 2    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay1"
+            android:layout_marginTop="5dp" />
+
+        <!-- Day 3 -->
+
+        <TextView
+            android:id="@+id/tvDay3"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 3    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay2"
+            android:layout_marginTop="5dp" />
+
+        <!-- Day 4 -->
+
+        <TextView
+            android:id="@+id/tvDay4"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 4    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay3"
+            android:layout_marginTop="5dp" />
+
+        <!-- Day 5 -->
+
+        <TextView
+            android:id="@+id/tvDay5"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 5    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay4"
+            android:layout_marginTop="5dp" />
+
+        <!-- Day 6 -->
+
+        <TextView
+            android:id="@+id/tvDay6"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 6    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay5"
+            android:layout_marginTop="5dp" />
+
+        <!-- Day 7 -->
+
+        <TextView
+            android:id="@+id/tvDay7"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Day 7    0 kcal"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tvWeeklyTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvWeeklyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDay6"
+            android:layout_marginTop="5dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
