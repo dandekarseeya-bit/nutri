@@ -42,6 +42,9 @@ dependencies {
     // Room Database
     implementation("androidx.room:room-runtime:2.8.3")
     annotationProcessor("androidx.room:room-compiler:2.8.3")
+    
+    // Splash Screen
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
     // RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.4.0")
