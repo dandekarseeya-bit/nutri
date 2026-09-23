@@ -8,13 +8,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(
-        entities = {FoodRecord.class},
-        version = 1,
+        entities = {FoodRecord.class, User.class},
+        version = 3,
         exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract FoodRecordDao foodRecordDao();
+    public abstract UserDao userDao();
 
     private static volatile AppDatabase INSTANCE;
 
@@ -30,7 +31,9 @@ public abstract class AppDatabase extends RoomDatabase {
                             context.getApplicationContext(),
                             AppDatabase.class,
                             "nutrilens_database"
-                    ).build();
+                    )
+                    .fallbackToDestructiveMigration()
+                    .build();
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.example.nutrilensai.data;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -9,6 +10,7 @@ import java.util.concurrent.Executors;
 public class FoodRepository {
 
     private final FoodRecordDao foodRecordDao;
+    private final String currentUsername;
 
     private final ExecutorService executorService =
             Executors.newSingleThreadExecutor();
@@ -19,10 +21,13 @@ public class FoodRepository {
                 AppDatabase.getDatabase(context);
 
         foodRecordDao = database.foodRecordDao();
+        
+        SharedPreferences prefs = context.getSharedPreferences("NutriLensPrefs", Context.MODE_PRIVATE);
+        currentUsername = prefs.getString("username", "default");
     }
 
     public void insert(FoodRecord foodRecord) {
-
+        foodRecord.username = currentUsername;
         executorService.execute(() -> {
             foodRecordDao.insert(foodRecord);
         });
@@ -38,7 +43,7 @@ public class FoodRepository {
     public void deleteAll() {
 
         executorService.execute(() -> {
-            foodRecordDao.deleteAll();
+            foodRecordDao.deleteAll(currentUsername);
         });
     }
 
@@ -48,7 +53,7 @@ public class FoodRepository {
         executorService.execute(() -> {
 
             List<FoodRecord> records =
-                    foodRecordDao.getAllFoodRecords();
+                    foodRecordDao.getAllFoodRecords(currentUsername);
 
             callback.onComplete(records);
         });
@@ -60,7 +65,7 @@ public class FoodRepository {
         executorService.execute(() -> {
 
             List<FoodRecord> records =
-                    foodRecordDao.getFoodRecordsByDate(date);
+                    foodRecordDao.getFoodRecordsByDate(currentUsername, date);
 
             callback.onComplete(records);
         });

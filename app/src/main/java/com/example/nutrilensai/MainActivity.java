@@ -1,6 +1,7 @@
 package com.example.nutrilensai;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -108,23 +109,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // =====================================================
-        // BARCODE SCANNER
-        // =====================================================
-
-        TextView navScan =
-                findViewById(R.id.navScan);
-
-        navScan.setOnClickListener(v -> {
-
-            Intent intent = new Intent(
-                    MainActivity.this,
-                    BarcodeScannerActivity.class
-            );
-
-            startActivity(intent);
-        });
-
-        // =====================================================
         // AI HEALTH COACH
         // =====================================================
 
@@ -144,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
         // =====================================================
         // DASHBOARD VIEWS
         // =====================================================
+
+        TextView btnProfileLogout = findViewById(R.id.btnProfileLogout);
+        btnProfileLogout.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+        });
 
         tvCalories =
                 findViewById(R.id.tvCalories);

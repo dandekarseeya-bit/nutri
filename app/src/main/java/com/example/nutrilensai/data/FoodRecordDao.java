@@ -16,12 +16,12 @@ public interface FoodRecordDao {
     @Delete
     void delete(FoodRecord foodRecord);
 
-    @Query("SELECT * FROM food_records ORDER BY id DESC")
-    List<FoodRecord> getAllFoodRecords();
+    @Query("SELECT * FROM food_records WHERE username = :username ORDER BY id DESC")
+    List<FoodRecord> getAllFoodRecords(String username);
 
-    @Query("SELECT * FROM food_records WHERE date = :date ORDER BY id DESC")
-    List<FoodRecord> getFoodRecordsByDate(String date);
+    @Query("SELECT * FROM food_records WHERE username = :username AND date = :date ORDER BY id DESC")
+    List<FoodRecord> getFoodRecordsByDate(String username, String date);
 
-    @Query("DELETE FROM food_records")
-    void deleteAll();
+    @Query("DELETE FROM food_records WHERE username = :username")
+    void deleteAll(String username);
 }

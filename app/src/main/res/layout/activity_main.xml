@@ -49,11 +49,14 @@
             android:textSize="20sp"/>
 
         <TextView
+            android:id="@+id/btnProfileLogout"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:gravity="center"
             android:text="👤"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 
@@ -390,15 +393,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="⚖\nScale"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:id="@+id/navScan"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="▣\nScan"
             android:textSize="12sp"/>
 
         <TextView

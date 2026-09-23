@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#F7F8FA">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="👤"
+        android:textSize="50sp"
+        android:background="@drawable/circle_background"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#202124"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="LOGOUT"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#F44336"/>
+
+</LinearLayout>

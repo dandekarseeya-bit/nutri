@@ -19,6 +19,8 @@ public class FoodRecord {
     public String mealType;
     public String date;
     public String time;
+    
+    public String username; // Links record to specific user
 
     public FoodRecord(
             String foodName,
